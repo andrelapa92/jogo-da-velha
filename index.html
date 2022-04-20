@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+    <title>Old Woman's Game</title>
+</head>
+
+<body id="bg-mode" class="default-mode">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <h1 class="text-center text-mode">Old Woman's Game</h1>
+            </div>
+            <div class="col-4">
+                <div class="botao">
+                    <div class="width-100">
+                        <span id="text-mode">Light Mode</span>
+                    </div>
+                    <div class="width-100">
+                        <label class="switch" onchange="changeMode()">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div class="quadrado border rounded">
+                <h6 id="q1" class="q-text text-center text-mode" onclick="play(this.id)">1</h6>
+            </div>
+            <div class="quadrado border rounded">
+                <h6 id="q2" class="q-text text-center text-mode" onclick="play(this.id)">2</h6>
+            </div>
+            <div class="quadrado border rounded">
+                <h6 id="q3" class="q-text text-center text-mode" onclick="play(this.id)">3</h6>
+            </div>
+        </div>
+        <div class="">
+            <div class="quadrado border rounded">
+                <h6 id="q4" class="q-text text-center text-mode" onclick="play(this.id)">4</h6>
+            </div>
+            <div class="quadrado border rounded">
+                <h6 id="q5" class="q-text text-center text-mode" onclick="play(this.id)">5</h6>
+            </div>
+            <div class="quadrado border rounded">
+                <h6 id="q6" class="q-text text-center text-mode" onclick="play(this.id)">6</h6>
+            </div>
+        </div>
+        <div class="">
+            <div class="quadrado border rounded">
+                <h6 id="q7" class="q-text text-center text-mode" onclick="play(this.id)">7</h6>
+            </div>
+            <div class="quadrado border rounded">
+                <h6 id="q8" class="q-text text-center text-mode" onclick="play(this.id)">8</h6>
+            </div>
+            <div class="quadrado border rounded">
+                <h6 id="q9" class="q-text text-center text-mode" onclick="play(this.id)">9</h6>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="script.js"></script>
+
+</html>

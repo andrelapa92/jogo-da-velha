@@ -6,8 +6,17 @@
     color: #252526;
 }
 
+.card {
+    border: none;
+}
+
 .area-botao {
     height: 180px;
+}
+
+.area-botao {
+    margin: 0;
+    position: absolute;
 }
 
 .dark-mode {
@@ -205,4 +214,25 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+.sml-screen {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+@media screen and (max-width: 768px) {
+    .sml-screen {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .quadrado {
+        margin: 0;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+        padding-top: 30px;
+        color: white;
+        font-size: 40px;
+    }
 }

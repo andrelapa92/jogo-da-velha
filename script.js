@@ -3,6 +3,7 @@
 const bg = document.getElementById('bg-mode');
 const mode = document.getElementById('text-mode');
 var darkmode = false;
+const botao = document.getElementById('reiniciar');
 
 var quadrado1 = document.getElementById('q1');
 var quadrado2 = document.getElementById('q2');
@@ -15,9 +16,12 @@ var quadrado8 = document.getElementById('q8');
 var quadrado9 = document.getElementById('q9');
 
 function changeMode() {
+    console.log(darkmode);
     bg.classList.toggle('dark-mode');
     if (bg.classList.contains('dark-mode')) {
         darkmode = true;
+        botao.classList.add('btn-light');
+        botao.classList.remove('btn-dark');
         mode.textContent = 'Dark Mode';
         quadrado1.classList.add('q1-dark');
         quadrado2.classList.add('q2-dark');
@@ -28,13 +32,11 @@ function changeMode() {
         quadrado7.classList.add('q7-dark');
         quadrado8.classList.add('q8-dark');
         quadrado9.classList.add('q9-dark');
-        for (var i = 1; i <= 9; i++) {
-            var quadrado = document.getElementById('q' + i);
-            quadrado.style.color = 'white';
-        }
     } else {
         mode.textContent = 'Light Mode';
         darkmode = false;
+        botao.classList.remove('btn-light');
+        botao.classList.add('btn-dark');
         quadrado1.classList.remove('q1-dark');
         quadrado2.classList.remove('q2-dark');
         quadrado3.classList.remove('q3-dark');
@@ -44,10 +46,6 @@ function changeMode() {
         quadrado7.classList.remove('q7-dark');
         quadrado8.classList.remove('q8-dark');
         quadrado9.classList.remove('q9-dark');
-        for (var i = 1; i <= 9; i++) {
-            var quadrado = document.getElementById('q' + i);
-            quadrado.style.color = '#252526';
-        }
     }
 }
 
@@ -70,12 +68,7 @@ function escolherQuadrado(id) {
         return;
     }
     quadrado.innerHTML = jogador;
-
-    if (darkmode === true) {
-        quadrado.style.color = 'white';
-    } else {
-        quadrado.style.color = '#252526';
-    }
+    quadrado.classList.add('animate__flipInX');
 
     if (jogador === 'X') {
         quadrado.style.background = 'red';
@@ -166,18 +159,21 @@ function checaSequencia(quadrado1, quadrado2, quadrado3) {
 function reiniciar() {
     vencedor = null;
     vencedorSelecionado.innerHTML = '';
+    mudarJogador(jogador);
 
-    if (darkmode === false) {
+    if (bg.classList.contains('dark-mode')) {
         for (var i = 1; i <= 9; i++) {
             var quadrado = document.getElementById('q' + i);
-            quadrado.style.background = 'white';
             quadrado.innerHTML = '&nbsp;';
+            quadrado.style.background = 'transparent';
+            quadrado.classList.remove('animate__flipInX');
         }
     } else {
         for (var i = 1; i <= 9; i++) {
             var quadrado = document.getElementById('q' + i);
-            quadrado.style.background = '#252526';
             quadrado.innerHTML = '&nbsp;';
+            quadrado.style.background = 'transparent';
+            quadrado.classList.remove('animate__flipInX');
         }
     }
 }
